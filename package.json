@@ -4,8 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "debug": "cross-env NODE_ENV=local DEBUG=awsSecurityUpdater:* node --inspect-brk=9229 --require ts-node/register src/app.local.js",
+    "lint:eslint": "eslint -- .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "joeytsai",
+  "pre-commit": "lint:eslint",
+  "dependencies": {
+    "@types/node": "^10.12.21",
+    "aws-sdk": "^2.421.0",
+    "axios": "^0.18.0",
+    "config": "^3.0.1",
+    "cross-env": "^5.2.0",
+    "debug": "^4.1.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.12.1",
+    "eslint-plugin-import": "^2.15.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.3.0",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.1"
+  },
   "license": "ISC"
 }

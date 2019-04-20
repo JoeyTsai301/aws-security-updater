@@ -1,0 +1,8 @@
+{
+  "appName":"awsSecurityUpdater",
+  "aws":{
+    "region":"ap-northeast-1",
+    "dynamoSettingTable":"security_group_updater_setting",
+    "ipRangesJsonUrl":"https://ip-ranges.amazonaws.com/ip-ranges.json"
+  }
+}
