@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description:
+    aws_security_updater
+Globals:
+    Function:
+        Timeout: 30    
+Resources:
+    AwsSecurityUpdater:
+      Type: AWS::Serverless::Function 
+      Properties:          
+          CodeUri: .
+          Handler: dist/handler.main
+          Runtime: nodejs8.10
+          Policies: 
+            - AmazonSQSFullAccess
+            - AmazonDynamoDBFullAccess
+            - AmazonEC2FullAccess
+          MemorySize: 1024
+          Environment:
+            Variables:
+              NODE_ENV: 'production'         
+          Events:
+              processRequest:
+                  Type: SQS 
+                  Properties:
+                    Queue: YOUR_SQS_ARN
+                    BatchSize: 1    

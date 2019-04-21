@@ -1,3 +1,8 @@
 !config/sample.json
 config/default.json
 node_modules/
+dsit/
+
+# deploy file
+packaged.yaml
+template.yaml

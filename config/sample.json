@@ -3,6 +3,10 @@
   "aws":{
     "region":"ap-northeast-1",
     "dynamoSettingTable":"security_group_updater_setting",
-    "ipRangesJsonUrl":"https://ip-ranges.amazonaws.com/ip-ranges.json"
+    "ipRangesJsonUrl":"https://ip-ranges.amazonaws.com/ip-ranges.json",
+    "sqsQueueUrl":"YOUR_SQS_URL",
+    "sqsQueueArn":"YOUR_SQS_ARN",
+    "deployStackName":"awsSecurityUpdater",
+    "deployS3Bucket":"YOUR_S3_BUCKET"
   }
 }

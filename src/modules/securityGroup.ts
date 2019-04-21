@@ -1,5 +1,5 @@
 import { debug as Debug} from './logger';
-const debug = Debug('helper');
+const debug = Debug('securityGroup');
 
 const getSecurityGroupContent = (awsEC2, securityGroupIds) : any => {
   return new Promise((resolve,reject)=>{
