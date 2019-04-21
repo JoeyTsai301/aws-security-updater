@@ -1,7 +1,7 @@
 !config/sample.json
 config/default.json
 node_modules/
-dsit/
+dist/
 
 # deploy file
 packaged.yaml
