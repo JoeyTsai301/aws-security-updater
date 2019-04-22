@@ -43,7 +43,10 @@ export const authorizeSecurityGroupIngress = (awsEC2, groupId, ipRanges, fromPor
 export const clearSecurityGroupContent = (awsEC2, groupIds, fromPort, toPort, protocol = 'TCP') => {  
   return new Promise(async (resolve,reject)=>{
     try{
-      const groupContent = await getSecurityGroupContent(awsEC2, groupIds);    
+      const groupContent = await getSecurityGroupContent(awsEC2, groupIds); 
+      if(!groupContent){
+        return reject(`Security group:${groupIds} not found`);
+      }
       Object.values(groupContent.SecurityGroups).forEach(async (securityGroupContent:any)=>{
         debug(`clear ${securityGroupContent.GroupId}`);
         var securityContent:any = [];
