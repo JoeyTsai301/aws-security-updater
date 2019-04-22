@@ -1,0 +1,1 @@
+aws dynamodb batch-write-item --request-items file://$PWD/data/dynamoSampleData.json

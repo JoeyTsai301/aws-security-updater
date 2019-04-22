@@ -1,0 +1,46 @@
+{
+  "security_group_updater_setting": [
+      {
+          "PutRequest": {
+              "Item": {
+                  "name": {
+                      "S": "config"
+                  },
+                  "updaterName": {
+                    "SS": ["rds-northeast-1"]
+                  }
+              }
+          }
+      },
+      {
+          "PutRequest": {
+              "Item": {
+                "name": {
+                  "S": "rds-northeast-1"
+                },
+                "fromPort": {
+                  "N": "3306"
+                },
+                "toPort": {
+                  "N": "3306"
+                },
+                "includeRegion":{
+                  "SS":["GLOBAL", "ap-northeast-1"]
+                },
+                "includeService":{
+                  "SS":["AMAZON"]
+                },
+                "protocol":{
+                  "S":"TCP"
+                },
+                "region":{
+                  "S":"ap-northeast-1"
+                },
+                "sgIds":{
+                  "SS":["sg-xxx", "sg-xxx"]
+                }
+              }
+          }
+      }
+  ]
+}
